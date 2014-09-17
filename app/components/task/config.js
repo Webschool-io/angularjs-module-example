@@ -1,15 +1,12 @@
-(function(){
+(function() {
 
-  angular.module('myApp.task.config', []);
+  angular.module('myApp.task.config', []).config(['$routeProvider', TaskConfig]);
 
-  angular.module('myApp.task.config')
-  .config(['$routeProvider', TaskConfig]);
-
-  function TaskConfig ($routeProvider) {
+  function TaskConfig($routeProvider) {
     $routeProvider.when('/tasks', {
       templateUrl: 'components/task/views/list.html',
       controller: 'TaskListController'
     });
   }
 
-});
+})();
